@@ -1,0 +1,26 @@
+Configuration:
+  name: Default
+  status: warn
+
+  Properties:
+    Property:
+      - name: "log-path"
+        value: "./logs"
+      - name: "pattern"
+        value: "%highlight{[%-5level]} %d{yyyy-MM-dd HH:mm:ss.SSS} [%t][%F] %c{1} - %msg%n"
+      - name: "charset-UTF-8"
+        value: "UTF-8"
+
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        charset: ${charset-UTF-8}
+        pattern: ${pattern}
+        disableAnsi: false
+  Loggers:
+    Root:
+      level: debug
+      AppenderRef:
+        - ref: Console_Appender
