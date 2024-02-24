@@ -21,7 +21,7 @@ public class ProductController {
         this.productService = productService;
     }
     @GetMapping()
-    public ResponseEntity<ProductResponseDto> getProduct(Long number) {
+    public ResponseEntity<ProductResponseDto> getProduct(@RequestParam(value="number") Long number) {
         ProductResponseDto productResponseDto = productService.getProduct(number);
 
         return ResponseEntity.status(HttpStatus.OK)
