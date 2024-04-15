@@ -22,3 +22,24 @@ spring:
 
 logging:
   config: classpath:log4j2.yaml
+
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+    caches:
+      enabled: false
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: threaddump, heapdump
+  info:
+    os:
+      enabled: true
+    java:
+      enabled: true
+    env:
+      enabled: true
